@@ -48,27 +48,10 @@ def main():
         help="Apply svd LoRA subspace"
     )
     parser.add_argument(
-        "--saved_lora_rank", 
-        type=int, 
-        default=256,
-        help="Rank of the svd LoRA subspace"
-    )
-    parser.add_argument(
-        "--sparse_lora", 
-        action="store_true",
-        help="Apply extra sparse LoRA parameters"
-    )
-    parser.add_argument(
         "--p_svd", 
         type=str, 
         default="qkv",
         help="Pattern of svd LoRA"
-    )
-    parser.add_argument(
-        "--p_sparse", 
-        type=str, 
-        default="qkv",
-        help="Pattern of sparse LoRA"
     )
     parser.add_argument(
         "--init_lora_weights", 
@@ -81,11 +64,6 @@ def main():
         type=str, 
         default="",
         help="Predefined space file path"
-    )
-    parser.add_argument(
-        "--use_mlp", 
-        action="store_true",
-        help="Apply MLP"
     )
     args = parser.parse_args()
     if args.init_lora_weights == "True":
@@ -100,13 +78,9 @@ def main():
             task_type=TaskType.FEATURE_EXTRACTION,
             bias="none",
             apply_svd_lora=args.svd_lora,
-            saved_svd_rank=args.saved_lora_rank,
-            apply_sparse_lora=args.sparse_lora,
             pattern_svd_lora=args.p_svd,
-            pattern_sparse_lora=args.p_sparse,
             init_lora_weights=args.init_lora_weights,
             use_predefined_space=args.use_predefined_space,
-            use_mlp=args.use_mlp,
         )
     if args.adalora:
         lora_config = AdaLoraConfig(

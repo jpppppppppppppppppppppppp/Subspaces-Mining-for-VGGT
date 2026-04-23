@@ -457,15 +457,11 @@ def main():
         bias="none",
         target_modules=lora_modules_name,
         apply_svd_lora=False,
-        saved_svd_rank=256,
-        apply_sparse_lora=False,
         pattern_svd_lora="qkv",
-        pattern_sparse_lora="qkv",
         # init_lora_weights="pissa",
         init_lora_weights=True,
         # use_predefined_space="/home/jiangyu/code/vggt/predefined_space/mega_8_16_32/geometry_texture_16.safetensors",
         use_predefined_space="./predefined_space/thuman_uniform_4_8_16_32_64/light_camera_geometry_texture_64.safetensors",
-        use_mlp=True,
     )
     model = PeftModel.from_pretrained(model, config=lora_config, model_id="./training/logs_ours_effect_16r_123/exp001/ckpts/lora-save")
     # model = PeftModel.from_pretrained(model, config=lora_config, model_id="./training/logs_lora_16_123/exp001/ckpts/lora-save")
