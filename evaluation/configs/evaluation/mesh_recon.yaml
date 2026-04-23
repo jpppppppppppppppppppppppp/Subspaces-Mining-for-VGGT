@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - override /data: mesh_recon
+
+name: mesh_recon
+
+eval_models:
+  - vggt
+
+eval_datasets:
+  - THUMAN
+  - 2K2K
+
+no_crop: True
+load_img_size: 518
+
+device: cuda
+
+verbose: False
+
+seed: 42
+
+save_suffix: null

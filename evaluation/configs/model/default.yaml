@@ -1,0 +1,52 @@
+pi3:  # model_keyname
+  cfg:
+    _target_: models.fastmodel.Pi3
+    pretrained_model_name_or_path: yyfz233/Pi3
+    # pretrained_model_name_or_path: checkpoints/Pi3
+  # infer_cameras_w2c:       # default to `interfaces.model_keyname.infer_cameras_w2c`
+  #   _target_: interfaces.pi3.infer_cameras_w2c
+  #   _partial_: true
+  # infer_cameras_c2w:       # default to `interfaces.model_keyname.infer_cameras_c2w`
+  #   _target_: interfaces.pi3.infer_cameras_c2w
+  #   _partial_: true
+  # infer_mv_pointclouds:    # default to `interfaces.model_keyname.infer_mv_pointclouds`
+  #   _target_: interfaces.pi3.infer_mv_pointclouds
+  #   _partial_: true
+  # infer_monodepth:         # default to `interfaces.model_keyname.infer_monodepth`
+  #   _target_: interfaces.pi3.infer_monodepth
+  #   _partial_: true
+  # infer_videodepth:        # default to `interfaces.model_keyname.infer_videodepth`
+  #   _target_: interfaces.pi3.infer_videodepth
+  #   _partial_: true
+
+vggt:
+  cfg:
+    _target_: models.fastmodel.VGGT
+    pretrained_model_name_or_path: facebook/VGGT-1B
+    # pretrained_model_name_or_path: checkpoints/VGGT-1B
+
+vggt-thuman-fft:
+  cfg:
+    _target_: models.fastmodel.VGGT
+    pretrained_model_name_or_path: /THuman_fft_123/exp001/ckpts/checkpoint.pt
+
+vggt-thuman-lora-16:
+  cfg:
+    _target_: models.fastmodel.VGGT
+    pretrained_model_name_or_path: /THuman_lora_16_123/exp001/ckpts/lora-save
+
+vggt-thuman-pissa-16:
+  cfg:
+    _target_: models.fastmodel.VGGT
+    pretrained_model_name_or_path: /THuman_pissa_16_123/exp001/ckpts/lora-save
+
+vggt-thuman-ours-uniform-16:
+  cfg:
+    _target_: models.fastmodel.VGGT
+    pretrained_model_name_or_path: /THuman_ours_16_123/exp001/ckpts/lora-save
+    predefined_space: /uniform_16/space.safetensors
+
+vggt-clearpose-adalora-16:
+  cfg:
+    _target_: models.fastmodel.VGGT
+    pretrained_model_name_or_path: /ClearPose_adalora_16_123/exp001/ckpts/lora-save

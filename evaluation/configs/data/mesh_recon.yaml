@@ -1,0 +1,25 @@
+THUMAN:
+  cfg:
+    _target_: datasets.thuman.THuman
+    split: test
+    THuman_DIR: /THUman/renderings
+    model_DIR: /THUman/smplx
+    load_img_size: ${load_img_size}
+    cache_file: data/dataset_cache/THuman_mv_recon_cache.npy
+  sampling:
+    strategy: stride
+    kf_every: 5
+  seq_id_map: datasets/seq-id-maps/THuman_mv-recon_seq-id-map.json
+
+2K2K:
+  cfg:
+    _target_: datasets.thuman.THuman
+    split: test
+    THuman_DIR: /2k2k/save
+    model_DIR: /2k2k/data_reordered
+    load_img_size: ${load_img_size}
+    cache_file: data/dataset_cache/2K2K_mv_recon_cache.npy
+  sampling:
+    strategy: stride
+    kf_every: 5
+  seq_id_map: datasets/seq-id-maps/2K2K_mv-recon_seq-id-map.json

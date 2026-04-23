@@ -517,7 +517,6 @@ def save_images(object_file: str) -> None:
     # load the object
     load_object(object_file)
     subject_id = object_file.split('/')[-1].split('.')[0]
-    # scale = np.load(f'/home/xiyichen/scratch.lin-lab/smplx/{subject_id}/smplx_param.pkl', allow_pickle=True)['scale']
     # normalize_scene(scale, int(subject_id))
 
     # create an empty object to track

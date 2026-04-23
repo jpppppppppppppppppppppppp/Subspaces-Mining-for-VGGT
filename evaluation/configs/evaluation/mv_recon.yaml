@@ -1,0 +1,27 @@
+# @package _global_
+
+defaults:
+  - override /data: mv_recon
+
+name: mv_recon
+
+eval_models:
+  - pi3
+  - vggt
+
+eval_datasets:
+  - THUMAN
+  - 2K2K
+  - ClearPose
+  - PLANE_SYNTH
+
+no_crop: True
+load_img_size: 518
+
+device: cuda
+
+verbose: False
+
+seed: 42
+
+save_suffix: null
